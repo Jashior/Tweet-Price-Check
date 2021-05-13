@@ -1,0 +1,9 @@
+{
+    "/2/*": {
+        "target": "https://api.twitter.com",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+} 
+
