@@ -1,25 +1,40 @@
-<hr />
+<input
+  id="twitterlink"
+  type="text"
+  placeholder="enter tweet URL or ID"
+  [(ngModel)]="twitterPostURL"
+/>
 
-<button (click)="getTwitterPost()">Click to get twitter post</button>
+<button (click)="getTwitterPost()">
+  Click to fetch data from twitter link
+</button>
 
 <h1>Username: {{ tweet.username }}</h1>
 <h1>Date: {{ tweet.date }}</h1>
 <h1>Text: {{ tweet.text }}</h1>
 
-<hr />
-
 <h1>Detected {{ coinValues.length }} coins</h1>
+<div *ngFor="let coin of coinValues">
+  {{ coin.name }}
+</div>
 
 <h1 *ngFor="let coin of coinValues">
-  {{ coin.name }} was at {{ coin.priceAtDate }} currently at
-  {{ coin.currentPrice }}
-  <div *ngIf="coin.difference > 0">(+{{ coin.difference }}%)</div>
-  <div *ngIf="coin.difference < 0">({{ coin.difference }}%)</div>
+  {{ coin.name }} was {{ coin.priceAtDate | number: "2.2-5" }} currently at
+  {{ coin.currentPrice | number: "2.2-5" }}
+  <div *ngIf="coin.percentDifference > 0">
+    (+{{ coin.percentDifference | number: "1.2-5" }}%)
+  </div>
+  <div *ngIf="coin.percentDifference < 0">
+    ({{ coin.percentDifference | number: "1.2-5" }}%)
+  </div>
 </h1>
 
 <h1>
-  If you investmented ${{ totalInitialInvestment }} evenly across these coins on
-  {{ tweet.date }}, you will now have ${{ investmentValue }}
+  If you invested ${{ initialInvestment }} evenly across this/these coin(s) on
+  {{ tweet.date }}, the date of the tweet, your investment will now be worth ${{
+    initialInvestment + initialInvestment * (totalPercentDifference / 100)
+      | number: "2.2-2"
+  }}
 </h1>
 
 <button (click)="analyseTweet()">analyse</button>
