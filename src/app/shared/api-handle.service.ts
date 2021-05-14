@@ -32,6 +32,7 @@ export class ApiHandleService {
     // https://api.coingecko.com/api/v3/coins/ripple/history?date=30-12-2017
     let path = `/coins/` + id + `/history?date=` + date;
     let apiURL = this.baseURL + path;
+    console.log(`Attempting to fetch ${apiURL}`);
     return this.http
       .get<Object>(apiURL)
       .pipe(retry(1), catchError(this.handleError));
@@ -41,8 +42,17 @@ export class ApiHandleService {
     // https://api.coingecko.com/api/v3/coins/ripple/
     let path = '/coins/' + id;
     let apiURL = this.baseURL + path;
+    console.log(`Attempting to fetch ${apiURL}`);
     return this.http
       .get<Object>(apiURL)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
+  getAllCoins() {
+    let path = '/coins/list/';
+    let apiURL = this.baseURL + path;
+    return this.http
+      .get<any>(apiURL)
       .pipe(retry(1), catchError(this.handleError));
   }
 
