@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { ApiHandleService } from './shared/api-handle.service';
 import { TwitterHandleService } from './shared/twitter-handle.service';
+import { TwitterPostService } from './shared/twitter-post.service';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ export class AppComponent {
 
   constructor(
     private apiService: ApiHandleService,
-    private twitterService: TwitterHandleService
+    private twitterService: TwitterHandleService,
+    private twitterPostService: TwitterPostService
   ) {}
 
   ngOnInit() {
@@ -93,6 +95,13 @@ export class AppComponent {
 
     // evaluate coins at tweet date compared to current date
     this.getCurrentEvaluation();
+  }
+
+  herokuFetch() {
+    let postId = '1393956950078021632';
+    this.twitterPostService.getTweet(postId).subscribe((data) => {
+      console.log(data);
+    });
   }
 
   // tweet text -> load ids into finalCoinIds
