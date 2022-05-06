@@ -14,7 +14,9 @@ export class TwitterHandleService {
   // Proxy used to ignore CORS error, proxy.conf.json
   // Mapping of baseURL: '2' -> 'https://api.twitter.com/2'
   baseURL = '2';
-  bearerToken = environment.BEARER_TOKEN;
+
+  // Bearer token to be added (not shown in git repo)
+  bearerToken = '';
 
   constructor(private http: HttpClient) {}
 
