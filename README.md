@@ -1,4 +1,10 @@
-# Pricecheck
+# Tweet-Price-Check
+
+Given a tweet referencing at least one cryptocurrency, calculate the value of investment at the time of tweet compared to the current time.
+
+# Demo
+
+https://crypto-tweet-price-check.herokuapp.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
