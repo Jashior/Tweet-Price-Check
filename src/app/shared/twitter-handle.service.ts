@@ -15,7 +15,7 @@ export class TwitterHandleService {
   // Mapping of baseURL: '2' -> 'https://api.twitter.com/2'
   baseURL = '2';
 
-  // Bearer token to be added (not shown in git repo)
+  // TODO: add bearer token (not shown in git repo), use of env variables encouraged
   bearerToken = '';
 
   constructor(private http: HttpClient) {}
