@@ -6,6 +6,7 @@ Given a tweet referencing at least one cryptocurrency, calculate the value of in
 
 https://crypto-tweet-price-check.herokuapp.com
 
+![Tweet Price Check][demo]
 
 ## Development server
 
@@ -30,3 +31,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+[demo]: src/assets/demo.png
