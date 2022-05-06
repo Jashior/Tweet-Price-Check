@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +14,7 @@ export class TwitterHandleService {
   // Proxy used to ignore CORS error, proxy.conf.json
   // Mapping of baseURL: '2' -> 'https://api.twitter.com/2'
   baseURL = '2';
-  bearerToken =
-    'AAAAAAAAAAAAAAAAAAAAAMVoPgEAAAAA3LcI20mF9%2BV7Ev9li58cvQBJ2Is%3Df93aTsWv5M3i1Vva5JcmJMa103BJolVJeXNVEjPhHUnKjKLw7f';
+  bearerToken = environment.BEARER_TOKEN;
 
   constructor(private http: HttpClient) {}
 
