@@ -6,7 +6,6 @@ Given a tweet referencing at least one cryptocurrency, calculate the value of in
 
 https://crypto-tweet-price-check.herokuapp.com
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
 ## Development server
 
